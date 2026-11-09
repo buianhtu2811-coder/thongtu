@@ -1,0 +1,1293 @@
+:root {
+  --primary: #ef4444;
+  --primary-dark: #dc2626;
+  --primary-light: #2c1517;
+  --gold: #f59e0b;
+  --gold-light: #2a2211;
+  --gold-border: #785311;
+  --bg: #0b0f19;
+  --card: #131b2e;
+  --card-inner: #18233a;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #23314d;
+  --good: #10b981;
+  --good-bg: #064e3b4d;
+  --bad: #f43f5e;
+  --bad-bg: #8813374d;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+header {
+  background: linear-gradient(135deg, #450a0a 0%, #2b0b14 50%, #151a2d 100%);
+  border-bottom: 2px solid var(--gold);
+  color: #fff;
+  text-align: center;
+  padding: 30px 16px 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+}
+header p {
+  margin: 8px auto 0;
+  max-width: 800px;
+  color: #cbd5e1;
+  font-size: 0.96rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 14px;
+}
+
+/* Card & Form */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--gold-border);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+.card-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  align-items: flex-end;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+input, select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.98rem;
+  background: #19243c;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+select option {
+  background: #131b2e;
+  color: var(--text);
+}
+button.btn-primary {
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #b91c1c 0%, #b45309 100%);
+  color: #fff;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 10px rgba(185, 28, 28, 0.35);
+}
+button.btn-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+button.btn-sm {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #f1f5f9;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+button.btn-sm:hover {
+  background: var(--gold);
+  color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.45);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.tab-btn {
+  padding: 11px 18px;
+  background: #162035;
+  border: 1px solid var(--border);
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.tab-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold-border);
+}
+.tab-btn.active {
+  background: linear-gradient(135deg, #991b1b 0%, #b45309 100%);
+  color: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 -2px 10px rgba(245, 158, 11, 0.25);
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Banner tuổi */
+.hero-banner {
+  background: linear-gradient(135deg, #1c263c 0%, #151e33 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+.hero-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+.hero-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #18233a;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.badge.good { background: #064e3b4d; color: #6ee7b7; border-color: #0d6b47; }
+.badge.bad { background: #8813374d; color: #fca5a5; border-color: #851b29; }
+.badge.gold { background: #452c084d; color: #fcd34d; border-color: #925f12; }
+
+/* Grid blocks */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.info-box {
+  background: #162035;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.info-box.highlight {
+  background: #1f273b;
+  border-color: var(--gold-border);
+}
+.info-box h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.info-box p {
+  margin: 5px 0;
+  font-size: 0.93rem;
+  color: #e2e8f0;
+}
+
+/* Bảng hướng phong thủy */
+.huong-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.huong-table th, .huong-table td {
+  padding: 10px 12px;
+  font-size: 0.91rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.huong-table th {
+  background: #19253d;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* Thơ ca quyết */
+.poem-card {
+  background: #181528;
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  border-top: 3px solid var(--gold);
+  padding: 18px 22px;
+  border-radius: 10px;
+  font-style: italic;
+  line-height: 1.9;
+  margin: 12px 0;
+  color: #fef08a;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.poem-col { text-align: center; }
+.poem-col > h3 { text-align: center; justify-content: center; }
+.huong-table th { text-align: center; }
+.huong-table td { text-align: left; }
+.huong-table { table-layout: fixed; }
+
+/* Khung cúng giải hạn */
+.cung-box {
+  background: #23192e;
+  border: 1px solid #4a2862;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 14px;
+}
+.cung-box h4 {
+  margin: 0 0 10px;
+  color: #e9d5ff;
+}
+
+/* Thanh điểm tương hợp ngày */
+.score-box {
+  background: linear-gradient(135deg, #093323 0%, #0d4330 100%);
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.2);
+}
+.score-box.bad {
+  background: linear-gradient(135deg, #441118 0%, #300c11 100%);
+  border-color: #f43f5e;
+  box-shadow: 0 4px 18px rgba(244, 63, 94, 0.2);
+}
+.score-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #6ee7b7;
+  line-height: 1;
+}
+.score-box.bad .score-num {
+  color: #fca5a5;
+}
+
+/* Bảng Kế Hoạch Sinh Con & Lưu Nguyệt */
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  background: #131b2e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.plan-table th, .plan-table td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  text-align: left;
+}
+.plan-table th {
+  background: #1a2742;
+  color: var(--gold);
+  font-weight: 700;
+}
+.plan-table tr:nth-child(even) {
+  background: #162035;
+}
+.plan-table tr:hover {
+  background: #1d2b48;
+}
+
+.subtext {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Star cards for Cát Tinh & Hung Tinh */
+.star-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.star-card {
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  background: #162035;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.star-card.cat {
+  border-left: 4px solid var(--good);
+  background: #082d23;
+  border-color: #0f4c39;
+}
+.star-card.hung {
+  border-left: 4px solid var(--bad);
+  background: #341219;
+  border-color: #591d28;
+}
+.star-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.star-card.cat .star-name { color: #6ee7b7; }
+.star-card.hung .star-name { color: #fca5a5; }
+.star-desc {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* Alert grid for Special Days (Con nước, Sát chủ...) */
+.alert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 12px;
+  margin: 14px 0 20px;
+}
+.alert-card {
+  border-radius: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: #162035;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.alert-card.bad {
+  border-color: #851b29;
+  background: #361219;
+}
+.alert-card.good {
+  border-color: #0d6b47;
+  background: #082d23;
+}
+.alert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.alert-title {
+  font-weight: 700;
+  font-size: 0.96rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+}
+.alert-body {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+/* Accordion or knowledge box */
+.knowledge-box {
+  background: #162035;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 14px;
+}
+.knowledge-box h4 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+.knowledge-box p, .knowledge-box li {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* Section divider trong Tab */
+.section-divider {
+  border-top: 1px dashed var(--border);
+  margin: 28px 0 22px;
+  padding-top: 14px;
+}
+.section-title {
+  color: var(--gold);
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.2px;
+}
+
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 30px 16px 50px;
+  border-top: 1px solid var(--border);
+  margin-top: 30px;
+}
+
+@media (max-width: 650px) {
+  header h1 { font-size: 1.55rem; }
+  .hero-banner { flex-direction: column; text-align: center; }
+  .hero-icon { font-size: 3.2rem; }
+  .tabs { gap: 4px; }
+  .tab-btn { font-size: 0.85rem; padding: 9px 12px; }
+}
+
+.cung-box .poem-card { text-align: left; font-style: normal; }
+
+
+/* ==========================================================================
+   PHÂN HỆ LÁ SỐ BÁT TỰ - TỨ TRỤ CHUẨN PHONGTHUYVUONG.COM (CHẾ ĐỘ DARK MODE)
+   ========================================================================== */
+#ptvBaziRoot {
+  color: #f1f5f9;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Màu 5 hành nổi bật trên nền Dark Mode */
+#ptvBaziRoot .KIM { color: #f8fafc !important; text-shadow: 0 0 8px rgba(248, 250, 252, 0.25); }
+#ptvBaziRoot .MOC { color: #4ade80 !important; }
+#ptvBaziRoot .THUY { color: #60a5fa !important; }
+#ptvBaziRoot .HOA { color: #f87171 !important; }
+#ptvBaziRoot .THO { color: #fbbf24 !important; }
+
+.ptv-bg-KIM { background: linear-gradient(90deg, #94a3b8, #f8fafc); }
+.ptv-bg-MOC { background: linear-gradient(90deg, #16a34a, #4ade80); }
+.ptv-bg-THUY { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+.ptv-bg-HOA { background: linear-gradient(90deg, #dc2626, #f87171); }
+.ptv-bg-THO { background: linear-gradient(90deg, #d97706, #fbbf24); }
+
+/* Khung thông tin mệnh chủ (.user-info chuẩn phongthuyvuong) */
+.ptv-user-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px 18px;
+  background: #0f172a;
+  border: 1px solid #2d3d5b;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+}
+.ptv-info-item {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #e2e8f0;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(148, 163, 184, 0.14);
+}
+.ptv-info-item b {
+  color: #94a3b8;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Thanh điều hướng con: Tứ trụ | Đại vận | Lưu niên | Lưu nguyệt | Tương phối */
+.ptv-subnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+.ptv-subnav-btn {
+  background: #162035;
+  color: #cbd5e1;
+  border: 1px solid #2e4063;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.ptv-subnav-btn:hover {
+  background: #1e2d4a;
+  color: #fff;
+  border-color: var(--gold);
+}
+.ptv-subnav-btn.active {
+  background: linear-gradient(135deg, #b45309, #d97706);
+  color: #fff;
+  border-color: #fbbf24;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+/* Bảng Tứ Trụ Tinh Bàn */
+.ptv-table-wrapper {
+  background: #0b1120;
+  border: 1px solid #2d3d5b;
+  border-radius: 12px;
+  padding: 14px;
+  overflow-x: auto;
+}
+.ptv-tinh-ban-flex,
+.ptv-shensha-flex {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+}
+.ptv-mobile-swipe-hint {
+  display: none;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: 8px;
+  padding: 5px 8px;
+  margin-bottom: 8px;
+}
+.ptv-col-wrap {
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+.ptv-col-card {
+  background: #131c31;
+  border: 1px solid #283756;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  overflow: hidden;
+}
+.ptv-col-card.ptv-col-day-highlight {
+  border-color: #f59e0b;
+  box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.35);
+}
+.ptv-row-header {
+  background: #192540;
+  color: #f8fafc;
+  font-weight: 700;
+  font-size: 0.96rem;
+  padding: 10px 6px;
+  border-bottom: 1px solid #283756;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ptv-col-sub {
+  font-size: 0.76rem;
+  color: #fbbf24;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.ptv-row-thiencan {
+  padding: 10px 4px 6px;
+  border-bottom: 1px dashed #24324f;
+}
+.ptv-thap-than-top {
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 22px;
+  margin-bottom: 4px;
+  opacity: 0.92;
+}
+.ptv-nhat-chu-badge {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  border-radius: 99px;
+  padding: 1px 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.ptv-can-big {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.ptv-row-diachi {
+  padding: 8px 4px 10px;
+  border-bottom: 1px solid #24324f;
+}
+.ptv-chi-big {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.ptv-row-tangcan,
+.ptv-row-tangtt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  background: #0f172a;
+}
+.ptv-row-tangtt {
+  padding-top: 0;
+  padding-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-bottom: 1px solid #24324f;
+}
+.ptv-row-truongsinh,
+.ptv-row-toavuong {
+  padding: 7px 6px;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  border-bottom: 1px dashed #24324f;
+}
+.ptv-ts-label {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+.ptv-row-napam {
+  padding: 9px 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  background: #16223b;
+}
+
+/* Hàng Thần Sát dưới mỗi trụ */
+.ptv-shensha-cell {
+  background: #0f172a;
+  border: 1px solid #283756;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 10px 6px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.ptv-shensha-pill {
+  width: 94%;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.ptv-shensha-pill:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.15);
+}
+.ptv-shensha-good {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+.ptv-shensha-bad {
+  background: rgba(148, 163, 184, 0.12);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* Khung đường nối Tương Phối (Thiên Can & Địa Chi) */
+.ptv-hidden {
+  display: none !important;
+}
+.ptv-relations-box {
+  min-width: 0;
+  background: #0f172a;
+  border: 1px dashed #3b4f75;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin: 8px 0;
+}
+.ptv-rel-empty {
+  text-align: center;
+  font-size: 0.84rem;
+  color: #94a3b8;
+  padding: 6px;
+}
+.ptv-relation-row {
+  position: relative;
+  padding: 16px 0 8px;
+  margin: 4px 0;
+}
+.ptv-rel-line {
+  position: absolute;
+  top: 29px;
+  height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #f59e0b, #60a5fa);
+  z-index: 1;
+}
+.ptv-rel-label {
+  position: absolute;
+  top: 2px;
+  transform: translateX(-50%);
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 99px;
+  z-index: 3;
+  white-space: nowrap;
+}
+.ptv-rel-cols {
+  display: flex;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.ptv-rel-col {
+  text-align: center;
+  min-height: 26px;
+}
+.ptv-rel-dot {
+  display: inline-block;
+  background: #0b1120;
+  border: 2px solid #f59e0b;
+  border-radius: 99px;
+  padding: 1px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* Bảng Đại Vận (8 cột) & Lưu Niên (10 cột) */
+.ptv-section-heading {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin: 24px 0 10px;
+  letter-spacing: 0.4px;
+}
+.ptv-section-sub {
+  text-align: center;
+  font-size: 0.84rem;
+  color: #94a3b8;
+  margin: -4px 0 12px;
+}
+.ptv-van-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(76px, 1fr));
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.ptv-van-grid-10 {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(72px, 1fr));
+  gap: 7px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.ptv-van-card {
+  background: #131c31;
+  border: 1px solid #283756;
+  border-radius: 9px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  overflow: hidden;
+}
+.ptv-van-card:hover {
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+.ptv-van-card.ptv-current-age-dv {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+.ptv-van-card.active {
+  background: #1d2b4a;
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+.ptv-van-head {
+  background: #192540;
+  padding: 6px 4px;
+  border-bottom: 1px solid #283756;
+}
+.ptv-van-age {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+.ptv-van-year {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+.ptv-van-body {
+  padding: 8px 4px;
+  border-bottom: 1px dashed #24324f;
+}
+.ptv-van-tt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.ptv-van-can,
+.ptv-van-chi {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.ptv-van-tang {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 3px;
+  background: #0f172a;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.ptv-mini-tang-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ptv-mini-tt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Bảng Lưu Nguyệt (12 tháng Tiết khí - Grid 6 cột x 2 hàng như phongthuyvuong.com) */
+.ptv-luunguyet-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(110px, 1fr));
+  gap: 8px;
+  overflow-x: auto;
+}
+.ptv-luunguyet-card {
+  background: #131c31;
+  border: 1px solid #283756;
+  border-radius: 9px;
+  padding: 10px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.ptv-luunguyet-card:hover {
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+.ptv-luunguyet-card.active {
+  background: #1e2d4d;
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+.ptv-ln-date {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+.ptv-ln-jie {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 5px;
+}
+.ptv-ln-tt {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.ptv-ln-can,
+.ptv-ln-chi {
+  font-size: 1.18rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.ptv-ln-tang-row,
+.ptv-ln-tang-tt-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.ptv-ln-tang-tt-row {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+/* Biểu đồ Tròn & Bảng Tỷ Lệ Ngũ Hành (Nguyên Bản & Tương Phối) */
+.ptv-charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  background: #0f172a;
+  border: 1px solid #283756;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+}
+.ptv-chart-box {
+  text-align: center;
+}
+.ptv-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+.ptv-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ptv-legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.ptv-nh-summary-bar {
+  background: #16223b;
+  border: 1px solid #2e436e;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 16px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.93rem;
+  color: #e2e8f0;
+}
+.ptv-nguhanh-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f172a;
+  border: 1px solid #283756;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ptv-nguhanh-table th,
+.ptv-nguhanh-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #24324f;
+  font-size: 0.9rem;
+}
+.ptv-nguhanh-table th {
+  background: #192540;
+  color: var(--gold);
+  font-weight: 700;
+  text-align: left;
+}
+.ptv-progress-track {
+  width: 100%;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.ptv-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+}
+.ptv-role-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.ptv-role-dung {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
+.ptv-role-hy {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.45);
+}
+.ptv-role-ky {
+  background: rgba(239, 68, 68, 0.16);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+.ptv-muted {
+  color: #64748b;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+  .ptv-van-grid-8 { grid-template-columns: repeat(4, minmax(70px, 1fr)); }
+  .ptv-van-grid-10 { grid-template-columns: repeat(5, minmax(64px, 1fr)); }
+  .ptv-luunguyet-grid-6 { grid-template-columns: repeat(3, minmax(95px, 1fr)); }
+}
+@media (max-width: 650px) {
+  .ptv-mobile-swipe-hint {
+    display: block;
+  }
+  .ptv-user-info-grid {
+    grid-template-columns: 1fr;
+    padding: 12px 14px;
+    gap: 6px;
+  }
+  .ptv-info-item {
+    font-size: 0.88rem;
+  }
+  .ptv-subnav {
+    gap: 6px;
+  }
+  .ptv-subnav-btn {
+    flex: 1 1 calc(33.33% - 6px);
+    padding: 8px 6px;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+  .ptv-table-wrapper {
+    padding: 8px 4px;
+    margin: 0 -6px;
+    border-radius: 10px;
+  }
+  .ptv-col-wrap {
+    padding: 0 2px;
+  }
+  .ptv-row-header {
+    font-size: 0.84rem;
+    padding: 7px 2px;
+    min-height: 40px;
+  }
+  .ptv-col-sub {
+    font-size: 0.68rem;
+  }
+  .ptv-thap-than-top {
+    font-size: 0.76rem;
+    min-height: 19px;
+  }
+  .ptv-nhat-chu-badge {
+    font-size: 0.68rem;
+    padding: 1px 5px;
+  }
+  .ptv-can-big,
+  .ptv-chi-big {
+    font-size: 1.28rem;
+  }
+  .ptv-row-tangcan,
+  .ptv-row-tangtt {
+    gap: 4px;
+    font-size: 0.75rem;
+    padding: 4px 2px;
+    flex-wrap: wrap;
+  }
+  .ptv-row-tangtt {
+    font-size: 0.7rem;
+    padding-bottom: 5px;
+  }
+  .ptv-row-truongsinh,
+  .ptv-row-toavuong {
+    padding: 5px 2px;
+    font-size: 0.74rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+  }
+  .ptv-ts-label {
+    font-size: 0.66rem;
+  }
+  .ptv-row-napam {
+    padding: 6px 2px;
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
+  .ptv-shensha-cell {
+    padding: 6px 2px;
+    min-height: 80px;
+    gap: 4px;
+  }
+  .ptv-shensha-pill {
+    width: 96%;
+    padding: 3px 2px;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  .ptv-van-grid-8 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .ptv-van-grid-10 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .ptv-van-age { font-size: 0.84rem; }
+  .ptv-van-year { font-size: 0.7rem; }
+  .ptv-van-can, .ptv-van-chi { font-size: 1.02rem; }
+  .ptv-van-tang { font-size: 0.68rem; gap: 3px; flex-wrap: wrap; }
+  .ptv-mini-tt { font-size: 0.62rem; }
+  .ptv-luunguyet-grid-6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .ptv-luunguyet-card {
+    padding: 8px 4px;
+  }
+  .ptv-ln-date { font-size: 1.05rem; }
+  .ptv-ln-can, .ptv-ln-chi { font-size: 1.05rem; }
+  .ptv-charts-row {
+    padding: 12px 6px;
+    gap: 14px;
+  }
+  .ptv-chart-box canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+  /* Chuyển bảng Ngũ Hành 7 cột thành thẻ dọc (Card View) trên điện thoại */
+  .ptv-nguhanh-table thead {
+    display: none;
+  }
+  .ptv-nguhanh-table,
+  .ptv-nguhanh-table tbody,
+  .ptv-nguhanh-table tr,
+  .ptv-nguhanh-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ptv-nguhanh-table tr {
+    background: #131c31;
+    border: 1px solid #283756;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+  }
+  .ptv-nguhanh-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right !important;
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(148, 163, 184, 0.16);
+    font-size: 0.85rem;
+    min-width: 0 !important;
+  }
+  .ptv-nguhanh-table td:last-child {
+    border-bottom: none;
+  }
+  .ptv-nguhanh-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #94a3b8;
+    text-align: left;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .ptv-nguhanh-table td .ptv-progress-track {
+    width: 140px;
+  }
+}
+@media (max-width: 420px) {
+  .ptv-luunguyet-grid-6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
